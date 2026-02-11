@@ -1,0 +1,61 @@
+:root {
+  --cor-areia: #FFEBB5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--cor-areia);
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+}
+
+.wave-1 {
+  animation: onda infinite 2s  ease-in-out alternate;
+  top: -270px;
+  z-index: 6;
+}
+
+.wave-2 {
+  animation: onda infinite 2.7s ease-in-out alternate;
+  top: -185px;
+  z-index: 4;
+}
+
+.wave-3 {
+  animation: onda infinite 3.4s ease-in-out alternate;
+  top: -85px;
+  z-index: 2;
+}
+
+.wave-4 {
+  top: -50px;
+  z-index: 1;
+  animation: mancha infinite 7s 3.5s ease-in-out;
+  opacity: 0%;
+  filter: invert();
+}
+
+@keyframes mancha {
+  from {
+    opacity: 25%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+@keyframes onda {
+  from {
+    transform: translateY(-35px);
+  }
+  to {
+    transform: translateY(35px);
+  }
+}
