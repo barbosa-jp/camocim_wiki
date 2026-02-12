@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 :root {
   --cor-areia: #FFEBB5;
 }
@@ -5,6 +7,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,36 +16,75 @@ body {
 
 .wave {
   position: absolute;
+  
   width: 100%;
 }
 
 .wave-1 {
-  animation: onda infinite 2s  ease-in-out alternate;
-  top: -270px;
-  z-index: 6;
+  top: -320px;
+  z-index: -1;
+
+  animation: big-wave infinite 2s  ease-in-out alternate;
 }
 
 .wave-2 {
-  animation: onda infinite 2.7s ease-in-out alternate;
-  top: -185px;
-  z-index: 4;
+  top: -220px;
+  z-index: -2;
+  
+  animation: big-wave infinite 2.7s ease-in-out alternate;
 }
 
 .wave-3 {
-  animation: onda infinite 3.4s ease-in-out alternate;
   top: -85px;
-  z-index: 2;
+  z-index: -3;
+  
+  animation: big-wave infinite 3.4s ease-in-out alternate;
 }
 
 .wave-4 {
   top: -50px;
-  z-index: 1;
-  animation: mancha infinite 7s 3.5s ease-in-out;
+  z-index: -4;
+  
+  animation: opacity infinite 6.8s 3.4s ease-in-out;
   opacity: 0%;
   filter: invert();
 }
 
-@keyframes mancha {
+.header {
+  padding: 48px;
+
+  width: 100vw;
+
+  display: flex;
+  justify-content: end;
+}
+
+.button-menu {
+  background: none;
+  border: none;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 70%;
+  
+  animation: small-wave infinite 2s alternate ease-in-out;
+}
+
+.subtitle {
+  font-size: 32px;
+  font-family: "Itim", cursive;
+  color: white;
+  
+  animation: small-wave infinite 2s alternate ease-in-out;
+}
+
+@keyframes opacity {
   from {
     opacity: 25%;
   }
@@ -51,11 +93,20 @@ body {
   }
 }
 
-@keyframes onda {
+@keyframes big-wave {
   from {
     transform: translateY(-35px);
   }
   to {
     transform: translateY(35px);
+  }
+}
+
+@keyframes small-wave {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
   }
 }
